@@ -53,6 +53,30 @@ include "./admin_incs/admin_nav.php";
 
             </div> <!-- col-md-6 -->
             <div class="col-md-6">
+                <?php
+                if(isset($_POST['add_category'])){
+                    $cat_title = $_POST['title'];
+                    // echo $cat_title ;
+                    if(!empty($cat_title)){
+                        // insert code 
+                       $sqlinsert =" INSERT INTO `categories`(`cat_title`) VALUES ('$cat_title')";
+                       $sqlCategory = mysqli_query($conn,$sqlinsert);
+                       if($sqlCategory){
+                        header("location:categories.php");
+                       }else{
+                        
+                       }
+
+
+                    } else { ?>
+
+                    <div class="alert-danger">
+                        <h1 class="text-center text-danger"> Enter Title</h1>
+                    </div>
+
+                  <?php  }//else
+                }// isset
+                ?>
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="">Category Title</label>

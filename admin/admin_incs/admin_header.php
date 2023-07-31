@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include"../includes/database.php";
 ?>
 <!DOCTYPE html>
