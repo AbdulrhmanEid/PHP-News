@@ -40,15 +40,25 @@ include "./admin_incs/admin_nav.php";
                         <tr>
                             <td scope="row"> <?=$cat_id?></td>
                             <td> <?=$cat_title?></td>
-                            <td><a href="#" ></a><i class="fa fa-edit"></i></a></td>
-                            <td><a href="#" ></a><i class="fa fa-trash"></i></a></td>
+                            <td><a href="categories.php?edit_id=<?=$cat_id?>" ><i class="fa fa-edit"></i></a></td>
+                            <td><a href="categories.php?del_id=<?=$cat_id?>" ><i class="fa fa-trash"></i></a></td>
                           
                         </tr>
                         <?php 
                         endwhile; ?>
                         
                     </tbody>
+                    <?php
+                 if(isset($_GET['del_id'])){
+                    $del_id = $_GET['del_id'];
+                     $del_sql = "DELETE FROM `categories` WHERE `cat_id`=  '$del_id'" ;
+                     $deletecategory = mysqli_query($conn,$del_sql) ;
+                     header("location:categories.php");
+
+                 }
+                 ?>
                 </table></table>
+                
 
 
             </div> <!-- col-md-6 -->

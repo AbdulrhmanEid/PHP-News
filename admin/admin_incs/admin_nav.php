@@ -37,7 +37,7 @@
                         <a href="../"><i class="fa fa-fw fa-dashboard"></i> View Website</a>
                     </li>
                     <li>
-                        <a href="categories.php"><i class="fa fa-fw fa-bar-chart-o"></i> Cayegories</a>
+                        <a href="categories.php"><i class="fa fa-fw fa-bar-chart-o"></i> categories</a>
                     </li>
                     
                     
