@@ -87,7 +87,7 @@ include "./admin_incs/admin_nav.php";
                   <?php  }//else
                 }// isset
                 ?>
-                <form action="" method="post">
+                <form action="" method="post"> 
                     <div class="form-group">
                         <label for="">Category Title</label>
                         <input type="text" name="title" id="" class="form-control">
@@ -96,6 +96,16 @@ include "./admin_incs/admin_nav.php";
                     <button type="submit" name="add_category" class="btn-block btn btn-primary">Add New Category</button>
                     </div>
                 </form>
+                <!-- update form  -->
+                <!-- edit -->
+                <?php
+                if(isset($_GET['edit_id'])):
+                    $edit_id = $_GET['edit_id'];
+                    include'./admin_incs/edit_category.php';
+                endif;
+                    
+                ?>
+
                 
 
 
